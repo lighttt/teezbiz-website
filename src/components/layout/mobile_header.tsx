@@ -2,14 +2,11 @@
 
 import { Dialog, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
 import { Fragment, useEffect, useState } from 'react';
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function MobileHeader({ menu }: { menu: { title: string; path: string }[] }) {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
     const [isOpen, setIsOpen] = useState(false);
     const openMobileMenu = () => setIsOpen(true);
     const closeMobileMenu = () => setIsOpen(false);
@@ -23,10 +20,6 @@ export default function MobileHeader({ menu }: { menu: { title: string; path: st
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [isOpen]);
-
-    useEffect(() => {
-        setIsOpen(false);
-    }, [pathname, searchParams]);
 
     return (
         <>
