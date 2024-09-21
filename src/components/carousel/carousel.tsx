@@ -101,7 +101,7 @@ const Carousel: React.FC<PropType> = (props) => {
 
     return (
         <section className="embla flex flex-row items-center">
-            <div>
+            <div className="hidden md:block">
                 <PrevButton onClick={() => onButtonAutoplayClick(onPrevButtonClick)} disabled={prevBtnDisabled} />
             </div>
 
@@ -124,7 +124,7 @@ const Carousel: React.FC<PropType> = (props) => {
                     ))}
                 </div>
             </div>
-            <div>
+            <div className="hidden md:block">
                 <NextButton onClick={() => onButtonAutoplayClick(onNextButtonClick)} disabled={nextBtnDisabled} />
             </div>
         </section>

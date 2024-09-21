@@ -4,7 +4,7 @@ import { CheckBadgeIcon, CubeTransparentIcon, DocumentTextIcon, TruckIcon } from
 
 const Features = () => {
     return (
-        <section className="px-5 pt-4">
+        <section className="px-5 md:pt-4">
             <div className="items-center py-[50px] lg:py-5 container mx-auto flex max-w-screen-lg flex-col px-5 md:px-0">
                 <ul className="flex w-full flex-col items-center justify-center gap-7 lg:flex-row lg:justify-between">
                     <li className="flex items-center gap-2 font-medium">

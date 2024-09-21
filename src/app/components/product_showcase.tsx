@@ -103,7 +103,7 @@ const ProductShowcase: React.FC = () => {
     };
 
     return (
-        <section className="bg-gray-100 w-full pt-16 md:pt-32">
+        <section className="bg-gray-100 w-full pt-16 md:pt-32 pb-4">
             <div className="container mx-auto flex flex-col items-center px-5 md:px-0">
                 {/* Title and Button */}
                 <div className="flex w-full flex-col justify-between lg:flex-row mb-7 lg:items-center lg:mb-12 gap-4">
@@ -138,7 +138,7 @@ const ProductShowcase: React.FC = () => {
                 </div>
 
                 {/* Arrows */}
-                <div className="flex justify-between space-x-3 mt-5 mb-4">
+                <div className="justify-between space-x-3 mt-5 hidden md:block">
                     <IconButton onClick={handleScrollLeft} className="p-2 rounded-full bg-black text-white hover:bg-black/80">
                         <ArrowLeftCircleIcon className="h-8 w-8" />
                     </IconButton>

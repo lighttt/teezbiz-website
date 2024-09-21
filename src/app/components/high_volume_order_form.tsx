@@ -46,7 +46,7 @@ const HighVolumeOrderForm = () => {
     const { handleChange, handleBlur, values, errors, touched, handleSubmit } = formik;
 
     return (
-        <section className="relative w-full px-12">
+        <section className="relative w-full md:px-12 px-6">
             {/* Background image and blur effect */}
             <div className="absolute inset-12 bg-form bg-cover bg-center"></div> {/* Background Image */}
             <div className="absolute inset-0 backdrop-blur-sm"></div> {/* Slight Blur over the background */}
@@ -154,10 +154,10 @@ const HighVolumeOrderForm = () => {
                     <Button
                         type="submit"
                         variant="text"
-                        className="mt-5 w-full"
                         sx={{
                             backgroundColor: 'black',
                             color: 'white',
+                            marginTop: '1.25rem',
                             padding: '0.75rem 1.5rem',
                             borderRadius: '2rem',
                             '&:hover': {

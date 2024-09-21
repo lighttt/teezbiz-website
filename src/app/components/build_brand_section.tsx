@@ -5,7 +5,7 @@ import React from 'react';
 
 const BuildBrandSection: React.FC = () => {
     return (
-        <section className="w-full pt-20">
+        <section className="w-full md:pt-20 pt-10">
             <div className="items-center max-w-screen-xl container mx-auto flex flex-col px-4">
                 {/* Section Title */}
                 <h2 className="home-section__title mb-[50px] text-center text-[28px] font-semibold leading-[120%] lg:text-[54px] 2xl:mb-[70px] lg:w-[840px] w-full">
@@ -55,7 +55,7 @@ const BuildBrandSection: React.FC = () => {
                     </li>
 
                     {/* Step 3 */}
-                    <li className="flex-1 justify-center flex flex-col">
+                    <li className="flex-1 justify-center flex flex-col items-center">
                         <div className="flex flex-col items-center pb-8 lg:pb-16">
                             <div className="relative mb-2.5 space-y-3">
                                 <p className="text-center">
