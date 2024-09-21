@@ -7,11 +7,11 @@ const config: Config = {
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-                banner: 'url(../../public/images/banner.png)',
-                bannerMobile: 'url(../../public/images/banner_mobile.png)',
+                banner: 'url(../../public/images/banner/banner_bg.svg)',
+                form: 'url(../../public/images/form_bg.jpg)',
             },
         },
     },
-    plugins: [],
+    plugins: [require('tailwind-scrollbar')],
 };
 export default config;

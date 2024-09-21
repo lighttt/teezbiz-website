@@ -1,76 +1,133 @@
-import Link from 'next/link';
+'use client';
 
 import AppImages from '@/src/core/constants/app_images';
+import { Instagram, LocationOn, Mail, YouTube } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 import Image from 'next/image';
-import { Suspense } from 'react';
-import FooterMenu from './footer_menu';
+import Link from 'next/link';
+import React from 'react';
 
-const { COMPANY_NAME, SITE_NAME } = process.env;
-
-export default async function Footer() {
-    const currentYear = new Date().getFullYear();
-    const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
-    const skeleton = 'w-full h-6 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700';
-    const menu = [
-        {
-            title: 'FAQ',
-            path: '/faq',
-        },
-        {
-            title: 'Privacy Policy',
-            path: '/privacy-policy',
-        },
-        {
-            title: 'Terms of Service',
-            path: '/terms-of-service',
-        },
-        {
-            title: 'Contact',
-            path: '/contact',
-        },
-    ];
-    const copyrightName = COMPANY_NAME || SITE_NAME || '';
-
+const Footer: React.FC = () => {
     return (
-        <footer className="text-sm text-neutral-500 dark:text-neutral-400">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
-                <div>
-                    <Link className="flex items-center gap-2 text-black md:pt-1 dark:text-white" href="/">
-                        <Image src={AppImages.logo} alt="TeezBiz" width={120} height={120} />
-
-                        <span className="uppercase">{SITE_NAME}</span>
-                    </Link>
-                </div>
-                <Suspense
-                    fallback={
-                        <div className="flex h-[188px] w-[200px] flex-col gap-2">
-                            <div className={skeleton} />
-                            <div className={skeleton} />
-                            <div className={skeleton} />
-                            <div className={skeleton} />
-                            <div className={skeleton} />
-                            <div className={skeleton} />
+        <footer className="bg-black text-white py-10">
+            <section className="w-full px-5 py-10">
+                <div className="items-center max-w-screen-1100 container mx-auto flex flex-col">
+                    <div className="flex w-full flex-col justify-between lg:flex-row">
+                        {/* Logo and Description */}
+                        <div className="flex flex-col lg:w-[402px]">
+                            <Link href="/" className="mb-10">
+                                <Image src={AppImages.logo} height={100} width={100} alt="TeezBiz" />
+                            </Link>
+                            <p className="mb-5 leading-tight">Empowering everyone to express themselves through clothes.</p>
+                            {/* Social Icons */}
+                            <ul className="flex gap-4">
+                                <li>
+                                    <Link
+                                        href="https://www.youtube.com/@teezbiz"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-gray-400"
+                                    >
+                                        <IconButton color="inherit" aria-label="YouTube">
+                                            <YouTube />
+                                        </IconButton>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://www.instagram.com/teezbiz/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-gray-400"
+                                    >
+                                        <IconButton color="inherit" aria-label="Instagram">
+                                            <Instagram />
+                                        </IconButton>
+                                    </Link>
+                                </li>
+                            </ul>
                         </div>
-                    }
-                >
-                    <FooterMenu menu={menu} />
-                </Suspense>
-            </div>
-            <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
-                <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
-                    <p>
-                        &copy; {copyrightDate} {copyrightName}
-                        {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
-                    </p>
-                    <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-                    <p>Designed in Australia</p>
-                    <p className="md:ml-auto">
-                        <a href="https://vercel.com" className="text-black dark:text-white">
-                            Crafted by ▲ TeezBiz
-                        </a>
-                    </p>
+
+                        {/* Information, Support, Contact Sections */}
+                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full mt-8 lg:mt-0">
+                            <div className="grid grid-cols-1 gap-9 lg:grid-cols-3 w-full">
+                                {/* Information Section */}
+                                <div className="flex flex-col">
+                                    <h4 className="mb-5 font-bold">Information</h4>
+                                    <Link href="/about-us" className="mb-2.5 hover:text-gray-400">
+                                        About Us
+                                    </Link>
+                                    <Link href="/privacy-policy" className="mb-2.5 hover:text-gray-400">
+                                        Privacy Policy
+                                    </Link>
+                                    <Link href="/terms-of-service" className="mb-2.5 hover:text-gray-400">
+                                        Terms of Service
+                                    </Link>
+                                    <Link href="/blog" className="mb-2.5 hover:text-gray-400">
+                                        Blog
+                                    </Link>
+                                </div>
+
+                                {/* Support Section */}
+                                <div className="flex flex-col">
+                                    <h4 className="mb-5 font-bold">Support</h4>
+                                    <Link
+                                        href="https://support.teezbiz.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mb-2.5 hover:text-gray-400"
+                                    >
+                                        Help Center
+                                    </Link>
+                                    <Link
+                                        href="https://support.teezbiz.com/returns"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mb-2.5 hover:text-gray-400"
+                                    >
+                                        Return
+                                    </Link>
+                                    <Link
+                                        href="https://support.teezbiz.com/shipping"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mb-2.5 hover:text-gray-400"
+                                    >
+                                        Shipping
+                                    </Link>
+                                </div>
+
+                                {/* Contact Section */}
+                                <div className="flex flex-col">
+                                    <h4 className="mb-5 font-bold">Contact</h4>
+                                    <Link href="mailto:info@teezbiz.com.au" className="mb-2.5 hover:text-gray-400">
+                                        <IconButton color="inherit">
+                                            <Mail />
+                                        </IconButton>
+                                        info@teezbiz.com.au
+                                    </Link>
+                                    <p className="mb-2.5 hover:text-gray-400">
+                                        <IconButton color="inherit">
+                                            <LocationOn />
+                                        </IconButton>
+                                        9 Clevedon Rd, Hurstville, NSW 2220, Australia
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="mb-10 h-px w-full border-b border-dashed border-white pt-10 lg:mb-10 lg:pt-10"></div>
+
+                    {/* Copyright and Payment Options */}
+                    <div className="flex w-full flex-col lg:flex-row justify-between">
+                        <p>© 2024, TEEZBIZ. All rights reserved.</p>
+                    </div>
                 </div>
-            </div>
+            </section>
         </footer>
     );
-}
+};
+
+export default Footer;
