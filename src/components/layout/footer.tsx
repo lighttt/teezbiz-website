@@ -1,13 +1,22 @@
 'use client';
 
 import AppImages from '@/src/core/constants/app_images';
+import { mainRoutes } from '@/src/core/constants/routes';
 import { Instagram, LocationOn, Mail, YouTube } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Footer: React.FC = () => {
+    const pathname = usePathname();
+    const isError = mainRoutes.includes(pathname) ? false : true;
+
+    if (isError) {
+        return null;
+    }
+
     return (
         <footer className="bg-black text-white py-10">
             <section className="w-full px-5 py-10">

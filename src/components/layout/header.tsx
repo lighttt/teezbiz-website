@@ -1,8 +1,12 @@
+'use client';
+
 import AppImages from '@/src/core/constants/app_images';
+import { mainRoutes } from '@/src/core/constants/routes';
 import { ArrowRightIcon, GiftIcon } from '@heroicons/react/24/outline';
 import { Orbitron } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import MobileHeader from './mobile_header';
 
 const orbitron = Orbitron({
@@ -13,6 +17,9 @@ const orbitron = Orbitron({
 });
 
 export default function Header() {
+    const pathname = usePathname();
+    const isError = mainRoutes.includes(pathname) ? false : true;
+
     const menu = [
         {
             title: 'Home',
@@ -27,6 +34,10 @@ export default function Header() {
             path: '/contact',
         },
     ];
+
+    if (isError) {
+        return null;
+    }
 
     return (
         <nav className="sticky top-0 z-50 flex flex-col border-b-[1px] border-b-gray-200 bg-white">

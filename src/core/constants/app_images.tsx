@@ -12,6 +12,7 @@ import bannerBg from '../../../public/images/banner/banner_bg.svg';
 import bannerMobile from '../../../public/images/banner_mobile.png';
 import logo from '../../../public/images/logo.png';
 import formBg from '../../../public/images/form_bg.jpg';
+import notFound from '../../../public/images/not_found.png';
 
 const AppImages = {
     logo,
@@ -21,6 +22,7 @@ const AppImages = {
     bannerMobile,
     bannerBg,
     formBg,
+    notFound,
 };
 
 export default AppImages;
