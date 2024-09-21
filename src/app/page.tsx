@@ -25,6 +25,7 @@ export async function generateMetadata() {
             ],
             type: 'website',
             siteName: 'TeezBiz',
+            url: 'https://teezbiz.vercel.app/',
         },
         twitter: {
             cardType: 'summary_large_image',
@@ -42,6 +43,7 @@ export async function generateMetadata() {
             description:
                 'TeezBiz specializes in premium t-shirt and hoodie printing, empowering businesses and individuals to build their brand identity through high-quality custom apparel. From design to delivery, we make it easy for you to create standout merchandise and leave a lasting impression.',
             type: 'website',
+            url: 'https://teezbiz.vercel.app/',
         },
     };
 }
