@@ -29,6 +29,18 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                {/* Favicon */}
+                <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+                <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
+
+                {/* Apple Touch Icon */}
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+                {/* Android Icons */}
+                <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+                <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+            </head>
             <body className={kumbh.className}>
                 <AppRouterCacheProvider>
                     <ThemeProvider theme={theme}>
