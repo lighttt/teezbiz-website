@@ -53,7 +53,7 @@ const HighVolumeOrderForm = () => {
             {/* Form Container */}
             <div className="relative mx-auto flex w-full flex-col items-center py-10 bg-white/20 rounded-xl backdrop-filter backdrop-blur-sm">
                 <h3 className="mb-6 w-full text-center text-3xl font-semibold leading-[120%] md:text-5xl">Ordering in high volumes?</h3>
-                <p className="text-center text-xl">Get in touch with TeezBiz's experts</p>
+                <p className="text-center text-xl">{`Get in touch with TeezBiz's experts`}</p>
 
                 <form onSubmit={handleSubmit} className="grid w-full max-w-lg gap-4 mt-10">
                     <div className="flex flex-col md:flex-row gap-4">

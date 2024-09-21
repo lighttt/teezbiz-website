@@ -97,7 +97,7 @@ const Carousel: React.FC<PropType> = (props) => {
             .on('reInit', tweenParallax)
             .on('scroll', tweenParallax)
             .on('slideFocus', tweenParallax);
-    }, [emblaApi, tweenParallax]);
+    }, [emblaApi, tweenParallax]); // eslint-disable-react-hooks/exhaustive-deps
 
     return (
         <section className="embla flex flex-row items-center">
